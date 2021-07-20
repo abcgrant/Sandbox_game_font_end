@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Sandbox_game
-=======
 # sandbox_game
 
 ## Project setup
@@ -28,6 +25,5 @@ yarn test:unit
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
->>>>>>> init
+> git遇到的问题：[stackoverflow
+](https://stackoverflow.com/questions/65173291/git-push-error-src-refspec-main-does-not-match-any-on-linux)
