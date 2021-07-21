@@ -1,5 +1,9 @@
 <template>
   <div class="content">
+    <div class="title">
+      <img alt="logo" src="@/assets/logo.png" width="5%">
+      <span>Sandbox Game</span> 沙盘游戏
+    </div>
     <div class="login">
       <div class="aside">
       </div>
@@ -96,9 +100,22 @@ export default {
 <style scoped lang="scss">
 .content{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  .title{
+    margin: -50px auto 50px;
+    padding-left: 20vw;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: darkorange;
+    span{
+      padding-left: 1vw;
+      color: cornflowerblue;
+    }
+  }
   .login{
     display: flex;
     justify-content: center;
@@ -125,8 +142,8 @@ export default {
       padding: 20vh 10% 0 10%;
       .login-t{
         height: 20%;
-        font-size: 20px;
-        font-family: Helvetica,Arial,serif ;
+        font-size: 35px;
+        font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
         font-weight: bold;
         margin-bottom: 6px;
       }
