@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="title">
-      <img alt="logo" src="@/assets/logo.png" width="5%">
+      <img alt="logo" src="@/assets/logo.png" width="30%">
       <span>Sandbox Game</span> 沙盘游戏
     </div>
     <div class="login">
