@@ -41,6 +41,7 @@
     "nprogress": "^0.2.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
+    "sweetalert2": "^11.0.19",
     "typescript": "~4.1.5",
     "vue-cli-plugin-axios": "^0.0.4",
     "vue-cli-plugin-element-ui": "^1.1.4",

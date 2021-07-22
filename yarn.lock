@@ -8722,6 +8722,11 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+sweetalert2@^11.0.19:
+  version "11.0.19"
+  resolved "https://registry.nlark.com/sweetalert2/download/sweetalert2-11.0.19.tgz#b1c50b87b4f3227dcd62b7396bca36f7bbce5041"
+  integrity sha1-scULh7TzIn3NYrc5a8o297vOUEE=
+
 symbol-tree@^3.2.2:
   version "3.2.4"
   resolved "https://registry.nlark.com/symbol-tree/download/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
