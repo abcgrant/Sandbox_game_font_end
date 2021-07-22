@@ -1,6 +1,6 @@
 <template>
   <el-container class="loading"
-                v-loading="loading"
+                v-loading="true"
                 element-loading-text="Loading……">
     <button @click="closeLoading">1</button>
     <h1>{{ msg }}</h1>
@@ -16,9 +16,8 @@ import 'nprogress/nprogress.css'
 
 @Component
 export default class HelloWorld extends Vue {
-  public loading = true
   public closeLoading():void{
-    this.loading = false
+    // this.$store.dispatch("closeLoad")
     NProgress.done();
   }
   @Prop() private msg!: string;

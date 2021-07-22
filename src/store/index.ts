@@ -21,6 +21,7 @@ export default new Vuex.Store({
     userinfo:{
       token:""
     },
+    // load: true
   },
   getters: {
     userStatus(state){
@@ -35,6 +36,9 @@ export default new Vuex.Store({
       state.userinfo = {token:''}
       // console.log("clear",state.userinfo['token'])
     },
+    // closeLoad(state){
+    //   state.load = false
+    // }
   },
   actions: {
     login({commit}, formData){
