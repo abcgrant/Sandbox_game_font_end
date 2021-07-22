@@ -63,7 +63,7 @@ export default new Vuex.Store({
                 Toast.fire({
                     icon: 'success',
                     title: '登陆成功'
-                }).then(r => router.push({path:'/loading'}).catch(err => (console.log(err))))
+                }).then(r => router.push({path:'/team'}).catch(err => (console.log(err))))
             }
           })
     },

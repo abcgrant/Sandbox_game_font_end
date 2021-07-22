@@ -1,6 +1,6 @@
 <template>
-  <el-container class="loading"
-                v-loading="loading"
+  <el-container class="load"
+                v-loading=false
                 element-loading-text="Loading……">
     <button @click="closeLoading">1</button>
     <h1>{{ msg }}</h1>
@@ -25,10 +25,10 @@ export default class HelloWorld extends Vue {
 }
 </script>
 
-<style lang="scss">
-.loading{
+<style lang="scss" scoped>
+.load{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
