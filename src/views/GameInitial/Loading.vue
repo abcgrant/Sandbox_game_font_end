@@ -1,6 +1,6 @@
 <template>
   <div class="loading">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to sandbox game"/>
   </div>
 </template>
 
