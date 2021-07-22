@@ -5,7 +5,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloWorld from '@/components/Loading.vue'
 
 export default {
@@ -15,3 +14,10 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.loading{
+  height: 100vh;
+  width: 100vw;
+}
+</style>

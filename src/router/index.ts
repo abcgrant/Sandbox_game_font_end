@@ -1,29 +1,27 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Loading from '../views/GameInitial/Loading.vue'
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/',
+    path: '/loading',
     name: 'Loading',
-    component: Loading
+    component: () => import(/* webpackChunkName: "about" */ '../views/GameInitial/Loading.vue'),
   },
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/GameInitial/Login.vue')
   }
 ]
@@ -31,5 +29,19 @@ const routes: Array<RouteConfig> = [
 const router = new VueRouter({
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'Loading'){
+    NProgress.start()
+    next()
+  }
+  else {
+    next()
+  }
+})
+
+router.afterEach(() => {
+  NProgress.done();
+});
 
 export default router

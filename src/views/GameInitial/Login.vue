@@ -61,6 +61,7 @@
 
 <script lang="js">
 import auth from "@/api/auth";
+import DynamicLine from '@/helper/dynamicLine';
 
 export default {
   data() {
@@ -79,6 +80,9 @@ export default {
       status: 'login',
       tips:{login:'没有账号，点击注册', register:'已有帐号点击登录'}
     };
+  },
+  mounted() {
+    DynamicLine()
   },
   methods: {
     onLogin() {

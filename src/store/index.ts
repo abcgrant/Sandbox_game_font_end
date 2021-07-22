@@ -42,7 +42,7 @@ export default new Vuex.Store({
               console.log(res)
               commit("saveUserinfo", res.data)
               localStorage.setItem("token", res.data)
-              router.push({path:'/'}).catch(err => (console.log(err)))
+              router.push({path:'/loading'}).catch(err => (console.log(err)))
             }
           })
     },
