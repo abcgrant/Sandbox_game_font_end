@@ -1,5 +1,5 @@
 <template>
-  <div class="loading">
+  <div class="loadings">
     <Load msg="Welcome to sandbox game"/>
     <div class="content">
         <el-form ref="form" :model="form">
@@ -34,7 +34,6 @@
 import Load from '@/components/Loading.vue'
 
 export default {
-  name: 'Loading',
   components: {
     Load
   },
@@ -50,7 +49,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.loading{
+.loadings{
   display: flex;
   flex-direction: column;
   align-items: center;

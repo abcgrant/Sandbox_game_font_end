@@ -15,10 +15,8 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 @Component
-export default class HelloWorld extends Vue {
-  public loading = true
+export default class Load extends Vue {
   public closeLoading():void{
-    this.loading = false
     NProgress.done();
   }
   @Prop() private msg!: string;
