@@ -10,9 +10,9 @@ Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/loading',
-    name: 'Loading',
-    component: () => import(/* webpackChunkName: "about" */ '../views/GameInitial/Loading.vue'),
+    path: '/team',
+    name: 'Team',
+    component: () => import(/* webpackChunkName: "about" */ '../views/GameInitial/Team.vue'),
   },
   {
     path: '/about',
