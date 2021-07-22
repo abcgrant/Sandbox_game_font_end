@@ -31,7 +31,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.name !== 'Loading'){
+  if (to.name !== 'Team'){
     NProgress.start()
     next()
   }

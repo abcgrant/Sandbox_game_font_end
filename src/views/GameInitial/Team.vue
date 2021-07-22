@@ -1,22 +1,22 @@
 <template>
-  <div class="loading">
-    <HelloWorld msg="Welcome to sandbox game"/>
+  <div class="team">
+    <L msg="Welcome to sandbox game"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/Loading.vue'
+import L from '@/components/Loading.vue'
 
 export default {
-  name: 'Loading',
+  name: 'L',
   components: {
-    HelloWorld
+    L
   }
 }
 </script>
 
 <style scoped lang="scss">
-.loading{
+.team{
   height: 100vh;
   width: 100vw;
 }
