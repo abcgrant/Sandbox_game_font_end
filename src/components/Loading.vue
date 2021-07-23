@@ -2,8 +2,8 @@
   <el-container class="load"
                 v-loading=false
                 element-loading-text="Loading……">
-    <button @click="closeLoading">1</button>
-    <h1>{{ msg }}</h1>
+<!--    <button @click="closeLoading">1</button>-->
+<!--    <h1>{{ msg }}</h1>-->
   </el-container>
 </template>
 

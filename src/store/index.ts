@@ -21,6 +21,9 @@ export default new Vuex.Store({
     userinfo:{
       token:""
     },
+    teaminfo:{
+      token:""
+    },
   },
   getters: {
     userStatus(state){
@@ -33,7 +36,6 @@ export default new Vuex.Store({
     },
     clearUserinfo(state){
       state.userinfo = {token:''}
-      // console.log("clear",state.userinfo['token'])
     },
   },
   actions: {

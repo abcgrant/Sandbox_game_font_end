@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-
+import store from '@/store'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import NProgress from 'nprogress'
@@ -31,13 +31,23 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.name !== 'Team'){
-    NProgress.start()
-    next()
-  }
-  else {
-    next()
-  }
+    if (store.state.userinfo.token) {
+      console.log('if (store.state.userinfo.token)')
+      NProgress.start()
+      next()
+    }
+    else {
+      store.dispatch('autoLogin').then(r => {
+        if (store.state.userinfo.token) {
+          console.log('dispatch(\'autoLogin\')',store.state.userinfo.token)
+          NProgress.start()
+          next()
+        } else {
+          NProgress.start()
+          next('/login')
+        }
+      })
+    }
 })
 
 router.afterEach(() => {
