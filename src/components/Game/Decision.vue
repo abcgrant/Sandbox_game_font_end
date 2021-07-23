@@ -1,0 +1,13 @@
+<template>
+
+</template>
+
+<script>
+export default {
+  name: "Decision"
+}
+</script>
+
+<style scoped>
+
+</style>
