@@ -1,13 +1,17 @@
 import request from "@/helper/request";
 
 const URL = {
+    // user
     REGISTER: '/api/register/',
     LOGIN: '/api/login/',
     AUTOLOGIN: '/api/autoLogin/',
     LOGOUT: '/api/logout/',
+    // team
+    SUBMIT: '/api/submit/'
 }
 
 export default {
+    // user
     register(username, password){
         return request(URL.REGISTER,'POST' ,{username, password})
     },
@@ -20,4 +24,9 @@ export default {
     logout(token){
         return request(URL.LOGOUT, 'POST', {token})
     },
+
+    // team
+    submit(){
+        console.log('a')
+    }
 }

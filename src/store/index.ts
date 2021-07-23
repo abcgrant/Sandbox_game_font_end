@@ -19,6 +19,7 @@ const Toast = Swal.mixin({
 export default new Vuex.Store({
   state: {
     userinfo:{
+      username:"",
       token:""
     },
     teaminfo:{
@@ -35,10 +36,11 @@ export default new Vuex.Store({
       state.userinfo['token'] = token;
     },
     clearUserinfo(state){
-      state.userinfo = {token:''}
+      state.userinfo = {username:"", token:''}
     },
   },
   actions: {
+    // user
     login({commit}, formData){
         auth.login(formData.username,formData.password)
           .then((res: { data: string; })=>{
@@ -110,6 +112,10 @@ export default new Vuex.Store({
       commit('clearUserinfo')
       localStorage.removeItem('token')
       auth.logout(token).then((res: never)=>{console.log(res)})
+    },
+    // team
+    submit({commit}, formData){
+      auth.submit(formData.gameID,formData.group)
     }
   },
 })
