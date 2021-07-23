@@ -31,6 +31,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  if(to.name !== 'Login'){
     if (store.state.userinfo.token) {
       console.log('if (store.state.userinfo.token)')
       NProgress.start()
@@ -48,6 +49,10 @@ router.beforeEach((to, from, next) => {
         }
       })
     }
+  }
+  else {
+    next()
+  }
 })
 
 router.afterEach(() => {
