@@ -12,11 +12,11 @@
           >
           </el-input>
         </el-form-item>
-        <el-form-item prop="group">
+        <el-form-item prop="teamName">
           <el-input
               placeholder="学校名称"
               prefix-icon="el-icon-school"
-              v-model="form.group"
+              v-model="form.teamName"
           >
           </el-input>
         </el-form-item>
@@ -41,13 +41,13 @@ export default {
     return{
       form: {
         gameID: null,
-        group: null,
+        teamName: null,
       }
     }
   },
   methods:{
     onSubmit(){
-      this.$store.dispatch("submit",{gameID:this.form.gameID,group:this.form.group})
+      this.$store.dispatch("submit",{gameID:this.form.gameID,teamName:this.form.teamName})
     }
   }
 }

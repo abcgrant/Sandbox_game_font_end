@@ -107,7 +107,7 @@ export default {
   .title{
     margin: -50px auto 50px;
     padding-left: 20vw;
-    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    //font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
     font-size: 30px;
     font-weight: bolder;
     color: darkorange;

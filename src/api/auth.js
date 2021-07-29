@@ -26,7 +26,7 @@ export default {
     },
 
     // team
-    submit(){
-        console.log('a')
+    submit(token, gameID, teamName){
+        return request(URL.SUBMIT, 'POST', {'token':token, 'gameID':gameID, 'teamName':teamName})
     }
 }

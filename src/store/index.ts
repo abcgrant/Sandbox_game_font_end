@@ -49,7 +49,9 @@ export default new Vuex.Store({
     },
     // team
     submit({commit}, formData){
-      auth.submit(formData.gameID,formData.group)
+      auth.submit(this.state.userinfo.token, formData.gameID, formData.teamName).then((r: any)=>{
+        console.log(r)
+      })
     }
   },
 })
