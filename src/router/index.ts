@@ -25,10 +25,20 @@ const routes: Array<RouteConfig> = [
     component: () => import('../views/GameInitial/Login.vue')
   },
   {
-    path: '/test',
-    name: 'Test',
-    component: () => import('../views/Test.vue')
-  }
+    path: '/Purchasing',
+    name: 'Purchasing',
+    component: () => import('../views/Game/Purchasing.vue')
+  },
+  {
+    path: '/HRM',
+    name: 'HRM',
+    component: () => import('../views/Game/HRM.vue')
+  },
+  {
+    path: '/Marketing',
+    name: 'Marketing',
+    component: () => import('../views/Game/Marketing.vue')
+  },
 ]
 
 const router = new VueRouter({
