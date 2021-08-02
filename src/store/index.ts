@@ -16,9 +16,6 @@ export default new Vuex.Store({
       username:"",
       token:""
     },
-    teaminfo:{
-      token:""
-    },
   },
   getters: {
     userStatus(state){
@@ -41,12 +38,13 @@ export default new Vuex.Store({
     register({commit}, formData) {
       user.register({commit}, formData)
     },
-    autoLogin({commit}){
-      user.autoLogin({commit})
+    async autoLogin({commit}){
+      await user.autoLogin({commit})
     },
     logout({commit}, token){
       user.logout({commit}, token)
     },
+
     // team
     submit({commit}, formData){
       auth.submit(this.state.userinfo.token, formData.gameID, formData.teamName).then((r: any)=>{

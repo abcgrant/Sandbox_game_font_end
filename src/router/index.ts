@@ -12,17 +12,22 @@ const routes: Array<RouteConfig> = [
   {
     path: '/team',
     name: 'Team',
-    component: () => import(/* webpackChunkName: "about" */ '../views/GameInitial/Team.vue'),
+    component: () => import('../views/GameInitial/Team.vue'),
   },
   {
     path: '/about',
     name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('../views/About.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import(/* webpackChunkName: "about" */ '../views/GameInitial/Login.vue')
+    component: () => import('../views/GameInitial/Login.vue')
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: () => import('../views/Test.vue')
   }
 ]
 
@@ -39,7 +44,6 @@ router.beforeEach((to, from, next) => {
     else {
       store.dispatch('autoLogin').then(r => {
         if (store.state.userinfo.token) {
-          console.log('dispatch(\'autoLogin\')',store.state.userinfo.token)
           NProgress.start()
           next()
         } else {

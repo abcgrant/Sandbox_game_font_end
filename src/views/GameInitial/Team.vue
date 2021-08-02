@@ -54,35 +54,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.loadings{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 32px;
-  .content{
-    margin-top: 3%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 37vw;
-    min-width: 270px;
-    height: 70vh;
-    border-radius: 13px;
-    box-shadow:  0 2px 20px rgba(0, 0, 0, .12), 0 0 20px rgba(0, 0, 0, .04);
-    .form {
-      margin-top: 50px;
-      //当在vue文件中，给el-input添加class命名，然后在style中设置样式，调整的是suffix的样式，要调整inner的样式，需要用到 /deep/ .el-input__inner 或 .s2>>>.el-input__inner（ps：搜索参考vue深度选择器）
-      ::v-deep .el-input__inner {
-        border-radius: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
-      }
+@use "src/style/box-content";
+@use "src/style/form";
 
-      .el-button {
-        border-radius: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
-      }
-    }
+.loadings{
+  @include box-content.box;
+  .form {
+    @include form.form;
   }
 }
 </style>
