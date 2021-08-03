@@ -39,6 +39,11 @@ const routes: Array<RouteConfig> = [
     name: 'Marketing',
     component: () => import('../views/Game/Marketing.vue')
   },
+  {
+    path: '/t',
+    name: 'T',
+    component: () => import('../views/test.vue')
+  },
 ]
 
 const router = new VueRouter({
