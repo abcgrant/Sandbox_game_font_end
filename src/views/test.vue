@@ -25,7 +25,7 @@
           <span ref="rippleThree" class="rule ripple"></span>
         </button>
       </div>
-      <div class="container pic"></div>
+      <div class="container pic" @click="refreshAndSubmit"></div>
     </div>
   </div>
 </template>
@@ -39,8 +39,7 @@ import {Component, Vue} from 'vue-property-decorator';
 export default class Test extends Vue {
 
   public async finance(): Promise<void> {
-    let forms = {
-      'load': await Swal.fire({
+    let forms = await Swal.fire({
         title: '短期借款',
         confirmButtonText: 'OK',
         html:
@@ -48,11 +47,11 @@ export default class Test extends Vue {
         focusConfirm: false,
         preConfirm: () => {
           const value: HTMLInputElement = document.getElementById('swal-input1') as HTMLInputElement
-          return value.value as string
+          console.log(value.value.toString())
+          return value.value.toString()
         }
       })
-    };
-    this.$store.commit("saveTeamFinance", forms)
+    this.$store.commit("saveTeamFinance", forms.value)
   }
 
   public async purchasing(): Promise<void>{
@@ -137,7 +136,6 @@ export default class Test extends Vue {
     this.$store.commit("saveTeamMarketing", forms)
   }
 
-
   public ripple(event: { offsetY: number; offsetX: number; }, ref: string): void{
     const ripple = this.$refs[ref] as HTMLElement
     const btn = this.$refs.btn as HTMLElement
@@ -151,6 +149,10 @@ export default class Test extends Vue {
     setTimeout(function(){
       ripple.classList.remove("animated")
     },800)
+  }
+
+  public refreshAndSubmit(): void{
+    this.$store.dispatch("refreshAndSubmit")
   }
 }
 </script>

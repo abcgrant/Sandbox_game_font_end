@@ -21,6 +21,21 @@ export default {
         }).then(() => router.push({path: '/t'}).catch(err => (console.log(err))));
       }
     });
+  },
+  refreshAndSubmit({state}: { state: State }): Promise<unknown>{
+    console.log(state.teaminfo)
+    return auth.refreshAndSubmit(state.teaminfo)
+      .then(
+        (r: any) => {
+          console.log(r)
+          if (r.status === 200) {
+            Toast.fire({
+              icon: 'success',
+              title: '刷新提交成功'
+            }).then(() => router.push({path: '/t'}).catch(err => (console.log(err))))
+          }
+        }
+      )
   }
 };
 

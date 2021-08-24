@@ -60,7 +60,6 @@
 </template>
 
 <script lang="js">
-import auth from "@/api/auth";
 
 export default {
   data() {

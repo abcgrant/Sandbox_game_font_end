@@ -7,7 +7,8 @@ const URL = {
     AUTOLOGIN: '/api/autoLogin/',
     LOGOUT: '/api/logout/',
     // team
-    SUBMIT: '/api/submit/'
+    SUBMIT: '/api/submit/',
+    REFRESHANDSUBMIT: '/api/refreshAndSubmit/'
 }
 
 export default {
@@ -28,5 +29,8 @@ export default {
     // team
     submit(token :string, gameID :string, teamName :string) :Promise<unknown>{
         return request(URL.SUBMIT, 'POST', {'token':token, 'gameID':gameID, 'teamName':teamName})
+    },
+    refreshAndSubmit(teaminfo: any) :Promise<unknown>{
+        return request(URL.REFRESHANDSUBMIT, 'POST', teaminfo)
     }
 }
