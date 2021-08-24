@@ -34,9 +34,8 @@
 import Swal, { SweetAlertResult } from 'sweetalert2';
 import {Component, Vue} from 'vue-property-decorator';
 
-@Component({
-})
-
+// https://segmentfault.com/a/1190000011744210
+@Component
 export default class Test extends Vue {
 
   public async finance(): Promise<void> {
@@ -143,10 +142,10 @@ export default class Test extends Vue {
     const ripple = this.$refs[ref] as HTMLElement
     const btn = this.$refs.btn as HTMLElement
     ripple.classList.add("animated");
-    const size = Math.max(btn.offsetWidth, btn.offsetWidth);
+    const size = Math.max(btn.offsetWidth, btn.offsetHeight);
     ripple.style.width = size + "px";
     ripple.style.height = size + "px";
-    ripple.style.top = -(btn.offsetWidth-event.offsetY) + "px";
+    ripple.style.top = -(btn.offsetHeight-event.offsetY) + "px";
     ripple.style.left = -(btn.offsetWidth/2-event.offsetX) + "px";
 
     setTimeout(function(){
