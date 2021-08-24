@@ -13,29 +13,9 @@ const routes: Array<RouteConfig> = [
     component: () => import('../views/GameInitial/Team.vue'),
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
-  },
-  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/GameInitial/Login.vue')
-  },
-  {
-    path: '/Purchasing',
-    name: 'Purchasing',
-    component: () => import('../views/Game/Purchasing.vue')
-  },
-  {
-    path: '/HRM',
-    name: 'HRM',
-    component: () => import('../views/Game/HRM.vue')
-  },
-  {
-    path: '/Marketing',
-    name: 'Marketing',
-    component: () => import('../views/Game/Marketing.vue')
   },
   {
     path: '/t',
