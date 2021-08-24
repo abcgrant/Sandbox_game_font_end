@@ -88,10 +88,7 @@ export default {
       this.status === 'login' ? this.status='register' : this.status='login'
     },
     onRegister(){
-      auth.register(this.form.uid, this.form.pwd)
-          .then((data)=>{
-            console.log(data)
-          })
+      this.$store.dispatch("register", {username:this.form.uid, password:this.form.pwd})
     },
   },
 };

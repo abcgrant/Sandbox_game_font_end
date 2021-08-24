@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import store from '@/store'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
@@ -52,13 +50,13 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if(to.name !== 'Login'){
-    if (store.state.userinfo.token) {
+    if (store.state.user.userinfo.token) {
       NProgress.start()
       next()
     }
     else {
       store.dispatch('autoLogin').then(r => {
-        if (store.state.userinfo.token) {
+        if (store.state.user.userinfo.token) {
           NProgress.start()
           next()
         } else {

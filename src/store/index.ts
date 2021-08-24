@@ -1,55 +1,24 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import {default as auth } from '@/api/auth'
+import Vuex, {StoreOptions} from 'vuex';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import user from './user'
+import {User, user} from './user/index';
+import {team} from './team/index'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store: StoreOptions<RootState> = {
   state: {
-    userinfo:{
-      username:"",
-      token:""
-    },
+    version: '1.0.0' // a simple property
   },
-  getters: {
-    userStatus(state){
-      return state.userinfo['token']
-    },
+  modules: {
+    user,
+    team
   },
-  mutations: {
-    saveUserinfo(state, token){
-      user.saveUserinfo(state, token)
-    },
-    clearUserinfo(state){
-      state.userinfo = {username:"", token:''}
-    },
-  },
-  actions: {
-    // user
-    login({commit}, formData){
-      user.login({commit}, formData)
-    },
-    register({commit}, formData) {
-      user.register({commit}, formData)
-    },
-    async autoLogin({commit}){
-      await user.autoLogin({commit})
-    },
-    logout({commit}, token){
-      user.logout({commit}, token)
-    },
+};
 
-    // team
-    submit({commit}, formData){
-      auth.submit(this.state.userinfo.token, formData.gameID, formData.teamName).then((r: any)=>{
-        console.log(r)
-      })
-    }
-  },
-})
+export default new Vuex.Store<RootState>(store);
+
+export interface RootState {
+  [x: string]: any;
+  version: string;
+}

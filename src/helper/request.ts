@@ -1,16 +1,19 @@
 import axios from 'axios'
 import Qs from 'qs'
 
-// axios.defaults.headers.post['Content-type'] = 'application/x-www-form-urlencoded'
-axios.defaults.baseURL = 'http://127.0.0.1:8000'
+axios.defaults.baseURL = `http://127.0.0.1:8000`
 axios.defaults.withCredentials = true
 
-export default function request(url, type='GET', data={}){
+
+export default function request(url: string, type='GET', data={}) :Promise<unknown>{
     return new Promise((resolve, reject)=>{
         const option = {
             url,
             method: type,
-            validateState(status){
+            params: {},
+            data: {},
+
+            validateState(status: number){
                 return (status >= 200 && status < 300) || status === 400
             }
         }

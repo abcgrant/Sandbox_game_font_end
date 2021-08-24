@@ -1,4 +1,4 @@
-import request from "@/helper/request";
+import request from "@/helper/request.ts"
 
 const URL = {
     // user
@@ -12,21 +12,21 @@ const URL = {
 
 export default {
     // user
-    register(username, password){
+    register(username :string, password :string) :Promise<unknown>{
         return request(URL.REGISTER,'POST' ,{username, password})
     },
-    login(username, password){
+    login(username :string, password :string) :Promise<unknown>{
         return request(URL.LOGIN, 'POST', {username, password})
     },
-    autoLogin(token){
+    autoLogin(token :string) :Promise<unknown>{
         return request(URL.AUTOLOGIN, 'POST', {token})
     },
-    logout(token){
+    logout(token :string) :Promise<unknown>{
         return request(URL.LOGOUT, 'POST', {token})
     },
 
     // team
-    submit(token, gameID, teamName){
+    submit(token :string, gameID :string, teamName :string) :Promise<unknown>{
         return request(URL.SUBMIT, 'POST', {'token':token, 'gameID':gameID, 'teamName':teamName})
     }
 }
