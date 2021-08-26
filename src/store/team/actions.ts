@@ -23,8 +23,8 @@ export default {
     });
   },
   refreshAndSubmit({state}: { state: State }): Promise<unknown>{
-    console.log(state.teaminfo)
-    return auth.refreshAndSubmit(state.teaminfo)
+    console.log(store.getters.teamStatus)
+    return auth.refreshAndSubmit(store.getters.teamStatus)
       .then(
         (r: any) => {
           console.log(r)

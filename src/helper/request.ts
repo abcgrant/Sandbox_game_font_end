@@ -5,7 +5,7 @@ axios.defaults.baseURL = `http://127.0.0.1:8000`
 axios.defaults.withCredentials = true
 
 
-export default function request(url: string, type='GET', data={}) :Promise<unknown>{
+export default function request(url: string, type='GET', data: any) :Promise<unknown>{
     return new Promise((resolve, reject)=>{
         const option = {
             url,
@@ -20,7 +20,12 @@ export default function request(url: string, type='GET', data={}) :Promise<unkno
         if(type.toLocaleLowerCase() === 'get'){
             option.params = data
         }else{
-            option.data = Qs.stringify(data)
+            if(typeof data === 'string'){
+                option.data = Qs.stringify({data: data})
+
+            }else {
+                option.data = Qs.stringify(data)
+            }
         }
         axios(option).then(res=>{
             if(res.status === 200){

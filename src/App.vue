@@ -18,7 +18,7 @@
 import DynamicLine from '@/helper/dynamicLine';
 
 export default {
-  mounted() {
+  mounted(){
     DynamicLine();
   }
 }

@@ -1,10 +1,12 @@
 import {state, State} from './state'
+import getters from './getters'
 import mutations from './mutations'
 import actions from './actions';
 import {ActionTree, GetterTree, ModuleTree, MutationTree} from 'vuex';
 
 export const team: Team<State, any> = {
   state,
+  getters,
   mutations,
   actions
 }
