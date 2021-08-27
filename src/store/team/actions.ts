@@ -1,8 +1,8 @@
-import {default as auth} from '@/api/auth.ts';
+import { default as auth } from '@/api/auth.ts';
 import Swal from 'sweetalert2';
 import router from '@/router';
 import store from '@/store';
-import {State} from '@/store/team/state';
+import { State } from '@/store/team/state';
 
 interface teamForm {
   gameID: string;
@@ -10,7 +10,7 @@ interface teamForm {
 }
 
 export default {
-  submit({state}: { state: State }, teamForm: teamForm): Promise<unknown> {
+  submit({ state }: { state: State }, teamForm: teamForm): Promise<unknown> {
     console.log(state);
     return auth.submit(store.state.user.userinfo.token, teamForm.gameID, teamForm.teamName).then((r: any) => {
       console.log(r)
@@ -18,11 +18,11 @@ export default {
         Toast.fire({
           icon: 'success',
           title: '注册队伍成功'
-        }).then(() => router.push({path: '/t'}).catch(err => (console.log(err))));
+        }).then(() => router.push({ path: '/t' }).catch(err => (console.log(err))));
       }
     });
   },
-  refreshAndSubmit({state}: { state: State }): Promise<unknown>{
+  refreshAndSubmit({ state }: { state: State }): Promise<unknown> {
     console.log(store.getters.teamStatus)
     return auth.refreshAndSubmit(store.getters.teamStatus)
       .then(
@@ -32,7 +32,7 @@ export default {
             Toast.fire({
               icon: 'success',
               title: '刷新提交成功'
-            }).then(() => router.push({path: '/t'}).catch(err => (console.log(err))))
+            }).then(() => router.push({ path: '/t' }).catch(err => (console.log(err))))
           }
         }
       )
