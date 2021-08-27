@@ -12,9 +12,9 @@ interface teamForm {
 export default {
   submit({ state }: { state: State }, teamForm: teamForm): Promise<unknown> {
     console.log(state);
-    return auth.submit(store.state.user.userinfo.token, teamForm.gameID, teamForm.teamName).then((r: any) => {
+    return auth.submit(store.state.user.userinfo.token, teamForm.gameID, teamForm.teamName).then((r) => {
       console.log(r)
-      if (r.status === 200) {
+      if (r) {
         Toast.fire({
           icon: 'success',
           title: '注册队伍成功'
@@ -23,12 +23,11 @@ export default {
     });
   },
   refreshAndSubmit({ state }: { state: State }): Promise<unknown> {
-    console.log(store.getters.teamStatus)
-    return auth.refreshAndSubmit(store.getters.teamStatus)
+    return auth.refreshAndSubmit(JSON.stringify(state.teaminfo))
       .then(
-        (r: any) => {
+        (r) => {
           console.log(r)
-          if (r.status === 200) {
+          if (r) {
             Toast.fire({
               icon: 'success',
               title: '刷新提交成功'

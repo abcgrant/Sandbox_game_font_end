@@ -5,7 +5,7 @@ export default {
     localStorage.setItem('token', token)
     state.userinfo['token'] = token;
   },
-  clearUserinfo(state: State): void{
-    state.userinfo = {username:"", token:''}
+  clearUserinfo(state: State): void {
+    state.userinfo = {username: "", token: ''}
   },
 }

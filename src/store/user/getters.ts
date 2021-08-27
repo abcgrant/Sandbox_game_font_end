@@ -1,7 +1,7 @@
 import { State } from './state'
 
 export default {
-  userStatus(state: State){
+  userStatus(state: State) {
     return state.userinfo['token']
   },
 }

@@ -12,20 +12,20 @@ interface Forms {
 }
 
 export default {
-  saveTeaminfo(state: State, teamForm: teamForm){
+  saveTeaminfo: (state: State, teamForm: teamForm): void => {
     state.teaminfo['gameID'] = teamForm['gameID'];
     state.teaminfo['teamName'] = teamForm['teamName'];
   },
-  saveTeamFinance({teaminfo: {season1}}: State, purchasingForms: number){
+  saveTeamFinance: ({teaminfo: {season1}}: State, purchasingForms: number): void => {
     season1.finance.load = purchasingForms
   },
-  saveTeamPurchasing({teaminfo: {season1}}: State, purchasingForms: Forms){
+  saveTeamPurchasing: ({teaminfo: {season1}}: State, purchasingForms: Forms): void => {
     season1.purchasing = purchasingForms
   },
-  saveTeamhrm({teaminfo: {season1}}: State, hrmForms: Forms) {
+  saveTeamhrm: ({teaminfo: {season1}}: State, hrmForms: Forms): void => {
     season1.hrm = hrmForms
   },
-  saveTeamMarketing({teaminfo: {season1}}: State, marketingForms: Forms) {
+  saveTeamMarketing: ({teaminfo: {season1}}: State, marketingForms: Forms): void => {
     season1.marketing = marketingForms
   },
 }

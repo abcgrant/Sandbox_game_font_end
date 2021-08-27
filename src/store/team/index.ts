@@ -3,8 +3,9 @@ import getters from './getters'
 import mutations from './mutations'
 import actions from './actions';
 import {ActionTree, GetterTree, ModuleTree, MutationTree} from 'vuex';
+import {RootState} from '@/store';
 
-export const team: Team<State, any> = {
+export const team: Team<State, RootState> = {
   state,
   getters,
   mutations,
